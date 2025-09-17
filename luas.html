@@ -3,46 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luas bangun Datar</title>
+    <title>Tugas 1 JS | Luas Bangun Datar</title>
 </head>
 <body>
-    <script>
-        // Deklarasi variabel
-        let panjang;
-        let lebar;
-        let sisi;
-        let tinggi;
-        let alas;
+    <div style="text-align: center; padding-bottom: 2rem;">
+        <h2>Luas Bangun Datar</h2>
+        <script>            
+            // Deklarasi variabel untuk semua bangun datar
+            let panjang;
+            let lebar;
+            let sisi;
+            let tinggi;
+            let alas;
 
-        // Bangun datar persegi panjang
-        panjang = 10;
-        lebar = 5;
-        document.write("Menghitung luas bangun datar dengan panjang " + panjang + " cm dan lebar " + lebar + " cm<br>");
+            // PERSEGI PANJANG
+            // Inisialisasi nilai panjang dan lebar
+            panjang = 10;
+            lebar = 5;
+            // Menampilkan judul dan gambar persegi panjang
+            document.write(
+                "<h3>Persegi Panjang</h3>" +
+                "<img src='https://i.pinimg.com/736x/71/4c/b8/714cb808416eb37552750ba615e3aa6d.jpg' alt='Gambar Persegi Panjang' width='200'>"
+            );
+            // Menampilkan detail ukuran
+            document.write(
+                "<br>Panjang " + panjang + 
+                " cm<br>Lebar " + lebar + " cm<br>"
+            );
 
-        // Rumus luas persegi panjang (panjang x lebar)
-        let luasPersegiPanjang = panjang * lebar;
-        document.write("Luas persegi panjang adalah " + luasPersegiPanjang + " cm²<br>");
+            // Menghitung luas persegi panjang (panjang x lebar)
+            let luasPersegiPanjang = panjang * lebar;
+            // Menampilkan hasil luas
+            document.write("Luas persegi panjang adalah " + luasPersegiPanjang + " cm²<br>");
 
-        document.write("<br>");
+            document.write("<br>");
 
-        // Bangun datar bujur sangkar
-        sisi = 4;
-        document.write("Menghitung luas bujur sangkar dengan sisi " + sisi + " cm<br>");
+            // BUJUR SANGKAR
+            // Inisialisasi nilai sisi
+            sisi = 4;
+            // Menampilkan judul dan gambar bujur sangkar
+            document.write(
+                "<h3>Bujur Sangkar</h3>" +
+                "<img src='https://i.pinimg.com/736x/35/77/cc/3577cc8ffbaa0797b446942ef44df9cc.jpg' alt='Gambar Bujur Sangkar' width='200'>"
+            );
+            // Menampilkan detail ukuran
+            document.write("<br>Sisi " + sisi + " cm<br>");
 
-        // Rumus luas bujur sangkar (sisi x sisi)
-        let luasBujurSangkar = sisi * sisi;
-        document.write("Luas bujur sangkar adalah " + luasBujurSangkar + " cm²<br>");
+            // Menghitung luas bujur sangkar (sisi x sisi)
+            let luasBujurSangkar = sisi * sisi;
+            // Menampilkan hasil luas
+            document.write("Luas bujur sangkar adalah " + luasBujurSangkar + " cm²<br>");
 
-        document.write("<br>");
+            // Spasi antar bangun datar
+            document.write("<br>");
 
-        // Bangun datar segitiga
-        alas = 6;
-        tinggi = 8;
-        document.write("Menghitung luas segitiga dengan alas " + alas + " cm dan tinggi " + tinggi + " cm<br>");
+            // SEGITIGA
+            // Inisialisasi nilai alas dan tinggi
+            alas = 6;
+            tinggi = 8;
+            // Menampilkan judul dan gambar segitiga
+            document.write(
+                "<h3>Segitiga</h3>" +
+                "<img src='https://i.pinimg.com/1200x/fb/c7/c4/fbc7c456abc45fc345d58962e475f04c.jpg' alt='Gambar Segitiga' width='200'>"
+            );
+            // Menampilkan detail ukuran
+            document.write("<br>Alas " + alas + " cm<br>Tinggi " + tinggi + " cm<br>");
 
-        // Rumus luas segitiga (1/2 x alas x tinggi)
-        let luasSegitiga = (alas * tinggi) / 2;
-        document.write("Luas segitiga adalah " + luasSegitiga + " cm²<br>");
-    </script>
+            // Menghitung luas segitiga (1/2 x alas x tinggi)
+            let luasSegitiga = (alas * tinggi) / 2;
+            // Menampilkan hasil luas
+            document.write("Luas segitiga adalah " + luasSegitiga + " cm²<br>");
+        </script>
+    </div>
 </body>
 </html>
