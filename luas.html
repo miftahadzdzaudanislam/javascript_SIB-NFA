@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luas bangun Datar</title>
+</head>
+<body>
+    <script>
+        // Deklarasi variabel
+        let panjang;
+        let lebar;
+        let sisi;
+        let tinggi;
+        let alas;
+
+        // Bangun datar persegi panjang
+        panjang = 10;
+        lebar = 5;
+        document.write("Menghitung luas bangun datar dengan panjang " + panjang + " cm dan lebar " + lebar + " cm<br>");
+
+        // Rumus luas persegi panjang (panjang x lebar)
+        let luasPersegiPanjang = panjang * lebar;
+        document.write("Luas persegi panjang adalah " + luasPersegiPanjang + " cm²<br>");
+
+        document.write("<br>");
+
+        // Bangun datar bujur sangkar
+        sisi = 4;
+        document.write("Menghitung luas bujur sangkar dengan sisi " + sisi + " cm<br>");
+
+        // Rumus luas bujur sangkar (sisi x sisi)
+        let luasBujurSangkar = sisi * sisi;
+        document.write("Luas bujur sangkar adalah " + luasBujurSangkar + " cm²<br>");
+
+        document.write("<br>");
+
+        // Bangun datar segitiga
+        alas = 6;
+        tinggi = 8;
+        document.write("Menghitung luas segitiga dengan alas " + alas + " cm dan tinggi " + tinggi + " cm<br>");
+
+        // Rumus luas segitiga (1/2 x alas x tinggi)
+        let luasSegitiga = (alas * tinggi) / 2;
+        document.write("Luas segitiga adalah " + luasSegitiga + " cm²<br>");
+    </script>
+</body>
+</html>
