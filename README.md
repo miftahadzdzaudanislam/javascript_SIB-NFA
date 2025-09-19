@@ -9,4 +9,4 @@ Setiap folder berisi file HTML/JavaScript sesuai instruksi tugas.
 - **Tugas 3** → Sistem manajemen produk toko (tambah, hapus, tampilkan produk).  
 
 ---
-> 📌 Dibuat untuk tugas Javascript ES6 SIB NF Academy.
+> 📌 Dibuat untuk tugas Javascript ES6 pada program SIB NF Academy.
