@@ -32,7 +32,7 @@ class Pelanggan {
         this.kendaraanDisewa = kendaraanDisewa;
     }
 
-    // Method untuk mendapatkan info pelanggan
+    // Metode untuk mendapatkan info pelanggan
     getInfo() {
         if (this.kendaraanDisewa) {
             let detailKendaraan = '';
@@ -47,7 +47,7 @@ class Pelanggan {
         }
     }
 
-    // Method untuk menampilkan transaksi
+    // Metode untuk menampilkan transaksi
     transaksi() {
         // Menampilkan detail transaksi hanya jika pelanggan sedang menyewa kendaraan
         if (this.kendaraanDisewa !== null) {
@@ -55,7 +55,7 @@ class Pelanggan {
             console.log(`Nama Pelanggan: ${this.nama}`);
             console.log(`Nomor Telepon: ${this.nomorTelepon}`);
             
-            // Menampilkan detail kendaraan berdasarkan jenisnya
+            // Menampilkan detail kendaraan
             if (this.kendaraanDisewa.jenis === 'mobil') {
                 console.log(`Jenis Kendaraan: Mobil`);
                 console.log(`Brand: ${this.kendaraanDisewa.brand}`);
@@ -97,7 +97,7 @@ class SistemTransportasi {
             return;
         }
 
-        console.log(`Total pelanggan: ${this.daftarPelanggan.length}\n`);
+        console.log(`Total pelanggan: ${this.daftarPelanggan.length}`);
         
         // looping menampilkan daftar pelanggan
         this.daftarPelanggan.forEach((pelanggan, index) => {
@@ -106,7 +106,6 @@ class SistemTransportasi {
     }
 }
 
-// Contoh penggunaan sistem
 console.log('=== SISTEM TRANSPORTASI ===');
 
 // Membuat instance sistem transportasi
@@ -120,15 +119,15 @@ const motor1 = new Motor('Honda', 'Beat', 2021, 'Matic');
 const motor2 = new Motor('Yamaha', 'Fino', 2020, 'Matic');
 const motor3 = new Motor('Suzuki', 'Vixion', 2019, 'Matic');
 
-// Membuat pelanggan yang sedang menyewa kendaraan dengan objek kendaraan
-const pelanggan1 = new Pelanggan('Andi Pratama', '08123456789', mobil1);
-const pelanggan2 = new Pelanggan('Budi Santoso', '08987654321', motor1);
-const pelanggan3 = new Pelanggan('Citra Dewi', '08555123456', mobil2);
+// Membuat pelanggan yang sedang menyewa kendaraan
+const pelanggan1 = new Pelanggan('Wahyu', '08124323421', mobil1);
+const pelanggan2 = new Pelanggan('Arya', '08124945823', motor1);
+const pelanggan3 = new Pelanggan('Raka', '08235453345', mobil2);
 
-// Membuat pelanggan yang TIDAK sedang menyewa kendaraan
-const pelanggan4 = new Pelanggan('Dedy Kurniawan', '08777888999');
-const pelanggan5 = new Pelanggan('Eko Prasetyo', '08444555666');
-const pelanggan6 = new Pelanggan('Fira Sari', '08333222111');
+// Membuat pelanggan yang menyewa kendaraan
+const pelanggan4 = new Pelanggan('Higa', '08235451001');
+const pelanggan5 = new Pelanggan('Andre', '08122345611');
+const pelanggan6 = new Pelanggan('Fahmi', '08456423438');
 
 // Menambahkan semua pelanggan ke sistem
 sistemTransportasi.tambahPelanggan(pelanggan1);
@@ -138,8 +137,8 @@ sistemTransportasi.tambahPelanggan(pelanggan4);
 sistemTransportasi.tambahPelanggan(pelanggan5);
 sistemTransportasi.tambahPelanggan(pelanggan6);
 
-// Menampilkan detail transaksi pelanggan yang sedang menyewa
-console.log('\n=== DETAIL TRANSAKSI PELANGGAN YANG MENYEWA ===');
+// Menampilkan detail transaksi pelanggan
+console.log('\n=== DETAIL TRANSAKSI PELANGGAN ===');
 pelanggan1.transaksi();
 pelanggan2.transaksi();
 pelanggan3.transaksi();
@@ -147,5 +146,5 @@ pelanggan4.transaksi();
 pelanggan5.transaksi();
 pelanggan6.transaksi();
 
-// Menampilkan SEMUA pelanggan (yang menyewa dan tidak menyewa)
+// Menampilkan semua pelanggan
 sistemTransportasi.tampilkanSemuaPelanggan();
