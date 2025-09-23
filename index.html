@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 5 | Javascript ES6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <h1 class="text-center my-4">🛒 Toko Online</h1>
+    <div class="container m-0">
+        <div id="product-list" class="row">
+            <!-- List Produk dengan javascript -->
+        </div>
+
+        <!-- Form Tambah Produk -->
+        <div class="card mt-4 shadow-sm">
+            <div class="card-body">
+                <h3 class="mb-3">Tambah Produk</h3>
+                <form id="product-form" class="row g-2">
+                    <div class="col-md-5">
+                        <input 
+                            type="text" 
+                            id="product-name" 
+                            class="form-control"
+                            placeholder="Nama Produk" 
+                            required
+                        >
+                    </div>
+                    <div class="col-md-5">
+                        <input 
+                            type="number" 
+                            id="product-price" 
+                            class="form-control"
+                            placeholder="Harga Produk" 
+                            required
+                        >
+                    </div>
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // List Produk
+        let productList = [
+            { id: 1, name: "Laptop", price: 6000000 },
+            { id: 2, name: "handphone", price: 2000000 },
+            { id: 3, name: "Tablet", price: 5000000 },
+            { id: 4, name: "Monitor", price: 8000000 },
+            { id: 5, name: "Keyboard", price: 500000 },
+        ]
+
+        // Fungsi Listener
+        const eListener = () => {
+            const form = document.getElementById("product-form");
+            form.addEventListener("submit", function(e) {
+                e.preventDefault(); // mencegah form submit
+                const name = document.getElementById("product-name").value;
+                const price = parseInt(document.getElementById("product-price").value)
+                const id = productList.length ? productList[productList.length - 1].id + 1 : 1; // generate id
+                addProduct(id, name, price); // panggil fungsi addProduct
+                viewProducts(); // panggil fungsi viewProducts
+                form.reset(); // reset form
+            });
+        }
+
+        // Fungsi menambah produk dengan spread operator
+        const addProduct = (id, name, price) => {
+            productList = [...productList, { id, name, price }];
+
+            console.log("Produk berhasil ditambahkan:", { id, name, price });
+        }
+
+        // Fungsi menghapus produk dengan rest parameter
+        const removeProduct = (...id) => {
+            alert(`Menghapus produk dengan id: ${id}`);
+            productList = productList.filter(product => !id.includes(product.id));
+
+            console.log(`Produk dengan id ${id} berhasil dihapus.`);
+        }
+
+        // Fungsi menampilkan produk dengan destructuring
+        const viewProducts = () => {
+            const ListProduk = document.getElementById("product-list"); // ambil elemen dengan id product-list
+            ListProduk.innerHTML = "";
+
+            // Destructuring
+            for (const { id, name, price } of productList) {
+                const productItem = document.createElement("p"); // buat elemen p
+                productItem.innerHTML = `
+                    ${id}. ${name} - Rp ${price.toLocaleString()}
+                    <button 
+                        onclick="removeProduct(${id}); viewProducts();"
+                        class="btn btn-danger btn-sm ms-2"    
+                    >
+                        Hapus
+                    </button>  
+                `;
+                ListProduk.appendChild(productItem); // tambah p ke dalam product-list
+            }
+
+            console.log("Data produk:", productList);
+        }
+
+        eListener(); // panggil fungsi eListener
+        viewProducts(); // panggil fungsi viewProducts
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
