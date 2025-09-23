@@ -77,10 +77,14 @@
 
         // Fungsi menghapus produk dengan rest parameter
         const removeProduct = (...id) => {
-            alert(`Menghapus produk dengan id: ${id}`);
-            productList = productList.filter(product => !id.includes(product.id));
-
-            console.log(`Produk dengan id ${id} berhasil dihapus.`);
+            // konfirmasi penghapusan
+            if (confirm("Apakah kamu yakin ingin menghapus produk ini?")) {
+                // filter produk yang id-nya tidak ada di dalam parameter id
+                productList = productList.filter(product => !id.includes(product.id));
+                console.log(`Produk dengan id ${id} berhasil dihapus.`);
+            } else {
+                console.log("Penghapusan dibatalkan.");
+            }
         }
 
         // Fungsi menampilkan produk dengan destructuring
