@@ -15,12 +15,12 @@ const index = () => {
 };
 
 // Fungsi untuk menambahkan data
-const store = (nama, umur, alamat) => {
+const store = (user) => {
     // Menambah data dengan method push
-    users.push({nama, umur, alamat});
+    users.push(user);
 
     console.log("\nMenambahkan Data User: ");
-    console.log(`User dengan nama ${nama} berhasil ditambahkan.`);
+    console.log(`User dengan nama ${user.nama} berhasil ditambahkan.`);
 };
 
 // Fungsi untuk menghapus data
